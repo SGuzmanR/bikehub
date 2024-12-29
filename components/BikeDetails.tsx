@@ -1,5 +1,3 @@
-"use client"
-
 import Image from "next/image";
 import { Fragment } from "react";
 import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/react";
@@ -58,15 +56,15 @@ const BikeDetails = ({ isOpen, closeModal, bike } : BikeDetailsProps) => {
 
                     <div className="flex gap-3">
                       <div className="flex-1 relative w-full h-24 bg-gray-50 rounded-lg ">
-                        <Image src="/hero.png" alt="bike model" fill priority className="object-contain" />
+                        <Image src="/hero2.png" alt="bike model" fill priority className="object-contain" />
                       </div>
 
                       <div className="flex-1 relative w-full h-24 bg-gray-50 rounded-lg ">
-                        <Image src="/hero.png" alt="bike model" fill priority className="object-contain" />
+                        <Image src="/hero2.png" alt="bike model" fill priority className="object-contain" />
                       </div>
 
                       <div className="flex-1 relative w-full h-24 bg-gray-50 rounded-lg ">
-                        <Image src="/hero.png" alt="bike model" fill priority className="object-contain" />
+                        <Image src="/hero2.png" alt="bike model" fill priority className="object-contain" />
                       </div>
                     </div>
                   </div>

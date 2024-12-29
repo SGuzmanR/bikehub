@@ -20,7 +20,8 @@ export interface BikeProps {
   model: string;
   year: number;
   transmission: string;
-  // type:"Sport"
+  type: string;
+  fuel_capacity: string;
   // displacement:"649.0 ccm (39.60 cubic inches)"
   // engine:"Twin, four-stroke"
   // compression:"10.8:1"
@@ -44,7 +45,6 @@ export interface BikeProps {
   // seat_height:"790 mm (31.1 inches) If adjustable, lowest setting."
   // ground_clearance:"130 mm (5.1 inches)"
   // wheelbase:"1410 mm (55.5 inches)"
-  // fuel_capacity:"15.14 litres (4.00 US gallons)"
   // starter:"Electric"
   // power:"52.3 HP (38.2 kW)) @ 8000 RPM"
   // torque:"56.0 Nm (5.7 kgf-m or 41.3 ft.lbs) @ 4000 RPM"
@@ -60,9 +60,26 @@ export interface BikeProps {
 };
 
 export interface FilterProps {
-  manufacturer: string;
-  year: number;
-  fuel: string;
-  limit: number;
   model: string;
+  make: string;
+  year: number;
 };
+
+export interface HomeProps {
+  searchParams: FilterProps;
+};
+
+export interface OptionProps {
+  title: string;
+  value: string;
+};
+
+export interface CustomFilterProps {
+  title: string;
+  options: OptionProps[];
+};
+
+export interface ShowMoreProps {
+  pageNumber: number;
+  isNext: boolean;
+}

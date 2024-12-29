@@ -1,21 +1,32 @@
 import { FilterProps } from "@/types";
 
 export async function fetchBikes (filters : FilterProps) {
-  const { manufacturer, year, fuel, limit, model } = filters;
+  const { model, make, year } = filters;
 
   const headers = {
     'x-rapidapi-key': 'd667da13d2msh010e04edb1a3b0cp1fcbc1jsnfa9b580ce735',
     'x-rapidapi-host': 'motorcycles-by-api-ninjas.p.rapidapi.com'
   };
 
-  const res = await fetch (`https://motorcycles-by-api-ninjas.p.rapidapi.com/v1/motorcycles?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}`, {
-    headers: headers,
-  });
+  const res = await fetch (
+    `https://motorcycles-by-api-ninjas.p.rapidapi.com/v1/motorcycles?make=${make}&model=${model}&year=${year}`, 
+    { headers: headers,}
+  );
 
   const result = await res.json();
 
   return result;
-}
+};
+
+export const updateSearchParams = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(type, value);
+
+  const newPathName = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathName;
+};
 
 export const calculateBikeRent = (city_mpg: number, year: number) => {
   const basePricePerDay = 50;

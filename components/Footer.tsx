@@ -1,6 +1,7 @@
-import { footerLinks } from "@/constants"
 import Image from "next/image"
 import Link from "next/link"
+
+import { footerLinks } from "@/constants"
 
 const Footer = () => {
   return (
@@ -18,11 +19,13 @@ const Footer = () => {
           {footerLinks.map((link) => (
             <div key={link.title} className="footer__link">
               <h3 className="font-bold">{link.title}</h3>
-              {link.links.map((item) => (
-                <Link key={item.title} href={item.url} className="text-gray-500">
-                  {item.title}
-                </Link>
-              ))}
+              <div className="flex flex-col gap-5">
+                {link.links.map((item) => (
+                  <Link key={item.title} href={item.url} className="text-gray-500">
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             </div> 
           ))}
         </div>
@@ -35,10 +38,10 @@ const Footer = () => {
 
         <div className="footer__copyrights-link">
           <Link href="/" className="text-gray-500">
-            Privacy Policy
+            Privacy & Policy
           </Link>
           <Link href="/" className="text-gray-500">
-            Terms of use
+            Terms & Condition
           </Link>
         </div>
       </div>
