@@ -3,9 +3,9 @@ import { FilterProps } from "@/types";
 export async function fetchBikes (filters : FilterProps) {
   const { model, make, year } = filters;
 
-  const headers = {
-    'x-rapidapi-key': 'd667da13d2msh010e04edb1a3b0cp1fcbc1jsnfa9b580ce735',
-    'x-rapidapi-host': 'motorcycles-by-api-ninjas.p.rapidapi.com'
+  const headers: HeadersInit = {
+    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
+    'X-RapidAPI-Host': 'motorcycles-by-api-ninjas.p.rapidapi.com'
   };
 
   const res = await fetch (
