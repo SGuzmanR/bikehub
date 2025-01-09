@@ -21,7 +21,7 @@ const Footer = () => {
               <h3 className="font-bold">{link.title}</h3>
               <div className="flex flex-col gap-5">
                 {link.links.map((item) => (
-                  <Link key={item.title} href={item.url} className="text-gray-500">
+                  <Link key={item.title} href={item.url} className="text-gray-500 hover:text-primary-green-100">
                     {item.title}
                   </Link>
                 ))}
@@ -37,10 +37,10 @@ const Footer = () => {
         </p>
 
         <div className="footer__copyrights-link">
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="text-gray-500 hover:text-primary-green-100">
             Privacy & Policy
           </Link>
-          <Link href="/" className="text-gray-500">
+          <Link href="/" className="text-gray-500 hover:text-primary-green-100">
             Terms & Condition
           </Link>
         </div>
