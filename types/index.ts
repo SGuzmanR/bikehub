@@ -83,3 +83,8 @@ export interface ShowMoreProps {
   pageNumber: number;
   isNext: boolean;
 }
+
+export interface ExploreBikesProps {
+  allBikes: string;
+  isDataEmpty: boolean;
+}

@@ -1,5 +1,6 @@
 import BikeCard from "@/components/BikeCard";
 import CustomFilter from "@/components/CustomFilter";
+import ExploreBikes from "@/components/ExploreBikes";
 import Hero from "@/components/Hero";
 import SearchBar from "@/components/SearchBar";
 import { yearsOfProduction } from "@/constants";
@@ -28,8 +29,9 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <main className="overflow-hidden">
       <Hero />
+      <ExploreBikes allBikes={allBikes} isDataEmpty={isDataEmpty} />
 
-      <div id="discover" className="mt-12 padding-x padding-y max-width">
+      {/* <div id="discover" className="mt-12 padding-x padding-y max-width">
         <div className="home__text-container">
           <h1 className="text-4xl font-extrabold">Bike Catalogue</h1>
           <p>Explore our bikes you might like</p>
@@ -61,7 +63,7 @@ export default async function Home({ searchParams }: HomeProps) {
             <p>{allBikes?.message}</p>
           </div>
         )}
-      </div>
+      </div> */}
     </main>
   );
 }
